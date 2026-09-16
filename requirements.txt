@@ -1,0 +1,16 @@
+# TrackSync runtime dependencies.
+#
+# Deliberately small. There is no scipy: the highpass is applied as a band
+# mask inside the cross-spectrum, which is free because the estimator is
+# already working in the frequency domain.
+
+numpy>=1.24
+soundfile>=0.12.1        # libsndfile: WAV, FLAC, AIFF, CAF, W64, OGG and MP3
+soxr>=0.3.7              # very-high-quality resampling, streaming and one-shot
+sounddevice>=0.4.6       # PortAudio bindings for the monitor; ships the DLL
+av>=11.0                 # M4A/AAC/WMA and audio in MP4/MOV; bundles ffmpeg
+PySide6>=6.5             # the desktop UI
+
+# build-time only
+pyinstaller>=6.3
+pillow>=10.0             # only used to regenerate assets/TrackSync.ico
